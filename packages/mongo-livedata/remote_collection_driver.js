@@ -23,6 +23,10 @@ _.extend(MongoInternals.RemoteCollectionDriver.prototype, {
 // you're only trying to receive data from a remote DDP server.)
 MongoInternals.defaultRemoteCollectionDriver = _.once(function () {
   // XXX kind of hacky
+  console.log("METEOR BOOTSTRAP: ");
+  console.log(__meteor_bootstrap__);
+  console.log("GET: ");
+  console.log(Meteor._get(__meteor_bootstrap__, 'deployConfig', 'packages', 'mongo-livedata', 'url'));
   var mongoUrl = (
     typeof __meteor_bootstrap__ !== 'undefined' &&
       Meteor._get(__meteor_bootstrap__,
