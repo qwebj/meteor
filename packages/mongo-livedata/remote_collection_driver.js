@@ -33,7 +33,7 @@ MongoInternals.defaultRemoteCollectionDriver = _.once(function () {
                   'deployConfig', 'packages', 'mongo-livedata', 'url'));
   // XXX bad error since it could also be set directly in METEOR_DEPLOY_CONFIG
   if (! mongoUrl)
-    throw new Error("MONGO_URL must be set in environment");
+    throw new Error("MONGO_URLx must be set in environment");
 
   return new MongoInternals.RemoteCollectionDriver(mongoUrl);
 });
